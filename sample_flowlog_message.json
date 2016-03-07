@@ -1,0 +1,369 @@
+{
+	Data : {
+    "messageType": "DATA_MESSAGE",
+    "owner": "751499613737",
+    "logGroup": "autosec751499613737",
+    "logStream": "eni-e1524abb-all",
+    "subscriptionFilters": [
+        "autosec751499613737"
+    ],
+    "logEvents": [
+        {
+            "id": "32472000323945648719563783889465884104854482306157838336",
+            "timestamp": 1456094854000,
+            "message": "2 751499613737 eni-e1524abb 54.231.168.182 10.20.0.7 80 36533 6 7 2549 1456094854 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "54.231.168.182",
+                "dstport": "36533",
+                "logstatus": "OK",
+                "start": "1456094854",
+                "endtime": "1456094920",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "6",
+                "bytes": "2549",
+                "srcport": "80",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000323945648719563783889465884104854482306157838337",
+            "timestamp": 1456094854000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 54.231.168.182 36533 80 6 10 683 1456094854 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "80",
+                "logstatus": "OK",
+                "start": "1456094854",
+                "endtime": "1456094920",
+                "dstaddr": "54.231.168.182",
+                "version": "2",
+                "packets": "10",
+                "accountid": "751499613737",
+                "protocol": "6",
+                "bytes": "683",
+                "srcport": "36533",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000323945648719563783889465884104854482306157838338",
+            "timestamp": 1456094854000,
+            "message": "2 751499613737 eni-e1524abb 54.231.168.182 10.20.0.7 80 36534 6 82464 40400879 1456094854 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "54.231.168.182",
+                "dstport": "36534",
+                "logstatus": "OK",
+                "start": "1456094854",
+                "endtime": "1456094920",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "82464",
+                "accountid": "751499613737",
+                "protocol": "6",
+                "bytes": "40400879",
+                "srcport": "80",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000323945648719563783889465884104854482306157838339",
+            "timestamp": 1456094854000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 54.231.168.182 36534 80 6 3205 128248 1456094854 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "80",
+                "logstatus": "OK",
+                "start": "1456094854",
+                "endtime": "1456094920",
+                "dstaddr": "54.231.168.182",
+                "version": "2",
+                "packets": "3205",
+                "accountid": "751499613737",
+                "protocol": "6",
+                "bytes": "128248",
+                "srcport": "36534",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334340",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 129.6.15.29 123 123 17 2 152 1456094860 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094920",
+                "dstaddr": "129.6.15.29",
+                "version": "2",
+                "packets": "2",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "152",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334341",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 173.255.246.13 123 123 17 2 152 1456094860 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094920",
+                "dstaddr": "173.255.246.13",
+                "version": "2",
+                "packets": "2",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "152",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334342",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 152.2.133.55 123 123 17 2 152 1456094860 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094920",
+                "dstaddr": "152.2.133.55",
+                "version": "2",
+                "packets": "2",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "152",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334343",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 208.75.89.4 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "208.75.89.4",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334344",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 142.54.181.202 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "142.54.181.202",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334345",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 142.54.181.202 10.20.0.7 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "142.54.181.202",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334346",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 66.228.59.187 10.20.0.7 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "66.228.59.187",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334347",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 66.228.59.187 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "66.228.59.187",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334348",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 208.75.89.4 10.20.0.7 123 123 17 7 532 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "208.75.89.4",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "7",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "532",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334349",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 152.2.133.55 10.20.0.7 123 123 17 2 152 1456094860 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "152.2.133.55",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094920",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "2",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "152",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334350",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 173.255.246.13 10.20.0.7 123 123 17 2 152 1456094860 1456094920 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "173.255.246.13",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094920",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "2",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "152",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334351",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 104.131.53.252 10.20.0.7 123 123 17 8 608 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "104.131.53.252",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "10.20.0.7",
+                "version": "2",
+                "packets": "8",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "608",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        },
+        {
+            "id": "32472000457750119910747522738680193740744651342040334352",
+            "timestamp": 1456094860000,
+            "message": "2 751499613737 eni-e1524abb 10.20.0.7 104.131.53.252 123 123 17 9 684 1456094860 1456094980 ACCEPT OK",
+            "extractedFields": {
+                "srcaddr": "10.20.0.7",
+                "dstport": "123",
+                "logstatus": "OK",
+                "start": "1456094860",
+                "endtime": "1456094980",
+                "dstaddr": "104.131.53.252",
+                "version": "2",
+                "packets": "9",
+                "accountid": "751499613737",
+                "protocol": "17",
+                "bytes": "684",
+                "srcport": "123",
+                "action": "ACCEPT",
+                "interfaceid": "eni-e1524abb"
+            }
+        }
+    ]
+}
