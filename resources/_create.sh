@@ -1,3 +1,4 @@
+#!/bin/sh
 . ./resources/run_bucket.sh $mode
 
 if [ "$err" != "" ]

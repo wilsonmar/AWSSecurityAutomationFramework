@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--ROLES--"
 capabilities="--capabilities CAPABILITY_IAM"
 

@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--FLOWLOGS--"
 
 if [ "$mode" == "NONE" ]

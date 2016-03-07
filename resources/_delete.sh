@@ -1,3 +1,4 @@
+#!/bin/sh
 . ./resources/run_instances.sh
 
 . ./resources/run_lambda.sh

@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--SUBSCRIPTION--"
 if [ "$mode" == "NONE" ]
 then

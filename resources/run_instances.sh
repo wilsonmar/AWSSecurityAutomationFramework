@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--INSTANCES--"
 
 if [ "$mode" == "CREATE" ]

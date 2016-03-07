@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--LAMBDA TRANSFORM--"
 	
 if [ "$mode" == "CREATE" ]

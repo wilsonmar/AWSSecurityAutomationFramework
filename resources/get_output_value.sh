@@ -1,3 +1,4 @@
+#!/bin/sh
 value=""
 
 until [ "$value" != "" ]

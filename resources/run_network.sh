@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "--NETWORK--"
 
 mode=$mode

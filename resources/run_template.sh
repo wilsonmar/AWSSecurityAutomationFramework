@@ -1,3 +1,4 @@
+#!/bin/sh
 if [ "$stack" == "" ] 
 then
 	echo "stack name is required."
