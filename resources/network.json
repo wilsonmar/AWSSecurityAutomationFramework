@@ -1,0 +1,203 @@
+{
+   "AWSTemplateFormatVersion" : "2010-09-09",
+   
+   "Parameters": {
+	    "HoneyVpcCidr" : {
+	      "Description": "CIDR block for HoneyNet VPC",
+	      "Type" : "String",
+	      "Default" : "10.20.0.0/24"
+	    },
+	    "HoneySubnet1Cidr" : {
+	      "Description": "CIDR block for HoneyNet Subnet1",
+	      "Type" : "String",
+	      "Default" : "10.20.0.0/28"
+	    },
+	    "HoneySubnet2Cidr" : {
+	      "Description": "CIDR block for HoneyNet Subnet2",
+	      "Type" : "String",
+	      "Default" : "10.20.0.16/28" 
+	    }
+    },
+ 
+   "Resources" : {
+      "HoneyVpc" : {
+         "Type" : "AWS::EC2::VPC",
+         "Properties" : {
+            "CidrBlock" : {"Ref" : "HoneyVpcCidr"},
+            "Tags" : [ {"Key" : "Name", "Value" : "HoneyVpc"} ]
+         }
+      },
+      
+      "HoneySubnet1" : {
+         "Type" : "AWS::EC2::Subnet",
+         "Properties" : {
+            "VpcId" : { "Ref" : "HoneyVpc" },
+            "CidrBlock" : {"Ref" : "HoneySubnet1Cidr"},
+            "AvailabilityZone" : "us-west-2c",
+            "Tags" : [ { "Key" : "Name", "Value" : "HoneySubnet1" } ]
+         }
+      },
+      
+      "HoneySubnet2" : {
+         "Type" : "AWS::EC2::Subnet",
+         "Properties" : {
+            "VpcId" : { "Ref" : "HoneyVpc" },
+            "CidrBlock" : {"Ref" : "HoneySubnet2Cidr"},
+            "AvailabilityZone" : "us-west-2c",
+            "Tags" : [ { "Key" : "Name", "Value" : "HoneySubnet2" } ]
+         }
+      },
+    
+     "HoneyNacl" : {
+   			"Type" : "AWS::EC2::NetworkAcl",
+   			"Properties" : {
+      			"VpcId" : {"Ref" : "HoneyVpc"}
+   			}
+	   },
+	   
+	   "HoneyNaclDenyVpcIn" : {   
+		   "Type" : "AWS::EC2::NetworkAclEntry",
+		   "Properties" : {
+		      "CidrBlock" : {"Ref" : "HoneyVpcCidr"},
+		      "Egress" : "false",
+		      "NetworkAclId" : {"Ref" : "HoneyNacl"},
+		      "Protocol" : "-1",
+		      "RuleAction" : "DENY",
+		      "RuleNumber" : "100"
+		   }
+		},
+		
+	    "HoneyAllowAllIn" : {   
+		   "Type" : "AWS::EC2::NetworkAclEntry",
+		   "Properties" : {
+		      "CidrBlock" : "0.0.0.0/0",
+		      "Egress" : "false",
+		      "NetworkAclId" : {"Ref" : "HoneyNacl"},
+		      "Protocol" : "-1",
+		      "RuleAction" : "ALLOW",
+		      "RuleNumber" : "101"
+		   }
+		},
+		
+		"HoneyNaclDenyVpcIn" : {   
+		   "Type" : "AWS::EC2::NetworkAclEntry",
+		   "Properties" : {
+		      "CidrBlock" : {"Ref" : "HoneyVpcCidr"},
+		      "Egress" : "true",
+		      "NetworkAclId" : {"Ref" : "HoneyNacl"},
+		      "Protocol" : "-1",
+		      "RuleAction" : "DENY",
+		      "RuleNumber" : "102"
+		   }
+		},
+		
+	    "HoneyAllowAllOut" : {   
+		   "Type" : "AWS::EC2::NetworkAclEntry",
+		   "Properties" : {
+		      "CidrBlock" : "0.0.0.0/0",
+		      "Egress" : "true",
+		      "NetworkAclId" : {"Ref" : "HoneyNacl"},
+		      "Protocol" : "-1",
+		      "RuleAction" : "ALLOW",
+		      "RuleNumber" : "103"
+		   }
+		},
+		
+		"HoneySubnet1NaclAssoc" : {
+			"Type" : "AWS::EC2::SubnetNetworkAclAssociation",
+			"Properties" : {
+				"SubnetId" : { "Ref" : "HoneySubnet1" },
+			    "NetworkAclId" : { "Ref" : "HoneyNacl" }		   
+	   		}
+	   	},
+    
+      "HoneySecurityGroup1" : {
+		   "Type" : "AWS::EC2::SecurityGroup",
+		   "Properties" : {
+		      "GroupDescription" : "Honey Security Group 1",
+		      "VpcId" : {"Ref" : "HoneyVpc"},
+		      "Tags" : [ { "Key" : "Name", "Value" : "Honey Security Group 1" } ],
+		      "SecurityGroupIngress" : [{
+		            "IpProtocol" : "-1",
+		            "FromPort" : "0",
+		            "ToPort" : "0",
+		            "CidrIp" : "0.0.0.0/0"
+		         }],
+		      "SecurityGroupEgress" : [{
+		         "IpProtocol" : "-1",
+		         "FromPort" : "0",
+		         "ToPort" : "0",
+		         "CidrIp" : "0.0.0.0/0"
+		      }]
+		   }
+	   },
+	   
+       "HoneyInternetGateway" : {
+         "Type" : "AWS::EC2::InternetGateway",
+         "Properties" : {
+            "Tags" : [ {"Key" : "Name", "Value" : "Honey Internet Gateway"}]
+         }
+       },
+       
+       "HoneyGatewayAttachment" : {
+		   "Type" : "AWS::EC2::VPCGatewayAttachment",
+		   "Properties" : {
+		      "VpcId" : { "Ref" : "HoneyVpc" },
+		      "InternetGatewayId" : { "Ref" : "HoneyInternetGateway" }
+		   }
+		},
+		
+	    "HoneyRouteTable" : {
+	         "Type" : "AWS::EC2::RouteTable",
+	         "Properties" : {
+	            "VpcId" : { "Ref" : "HoneyVpc" },
+	            "Tags" : [ { "Key" : "Name", "Value" : "Honey Route Table" } ]
+	         }
+	    },
+	   
+	   "HoneyIGWRoute" : {
+         "Type" : "AWS::EC2::Route",
+         "DependsOn" : "HoneyInternetGateway",
+         "Properties" : {
+            "RouteTableId" : { "Ref" : "HoneyRouteTable" },
+            "DestinationCidrBlock" : "0.0.0.0/0",
+            "GatewayId" : { "Ref" : "HoneyInternetGateway" }
+         }
+      },
+      
+      "HoneyRouteTableAssociation1" : {
+		   "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+		   "Properties" : {
+		      "RouteTableId" : {"Ref":"HoneyRouteTable"},
+		      "SubnetId" : {"Ref":"HoneySubnet1"}
+		   }
+		},
+ 
+       "HoneyRouteTableAssociation2" : {
+		   "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+		   "Properties" : {
+		      "RouteTableId" : {"Ref":"HoneyRouteTable"},
+		      "SubnetId" : {"Ref":"HoneySubnet2"}
+		   }
+	   }    
+   },
+ 
+  "Outputs" : {
+    "HoneyVpc" : {
+      "Description": "Honey Vpc",
+      "Value" : { "Ref": "HoneyVpc" }
+    },
+    "HoneySecurityGroup" : {
+      "Description": "Honey Security Group 1",
+      "Value" : { "Ref": "HoneySecurityGroup1" }
+    },
+    "HoneySubnet1" : {
+      "Description": "Honey Subnet1",
+      "Value" : { "Ref": "HoneySubnet1" }
+    },
+    "HoneySubnet2" : {
+      "Description": "Honey Subnet2",
+      "Value" : { "Ref": "HoneySubnet2" }
+    }
+  }
+} 

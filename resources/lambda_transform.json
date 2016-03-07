@@ -1,0 +1,81 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+ 
+  "Description" : "Lambda function that parses the event stream runs the copy command",
+ 
+  "Parameters": {
+    "ModuleName" : {
+      "Description" : "The name of the JavaScript file for lambda function",
+      "Type" : "String",
+      "Default" : "lambdatransform"
+    },
+    "S3Bucket" : {
+      "Description" : "The name of the bucket that contains your packaged source",
+      "Type" : "String"
+    },
+    "S3ZipFile" : {
+      "Description" : "The name of the ZIP package",
+      "Type" : "String",
+      "Default" : "lambdatransform.zip"
+    }
+   
+  },
+ 
+  "Resources" : {
+ 	
+    "LambdaParseExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+              "Effect": "Allow",
+              "Principal": {"Service": ["lambda.amazonaws.com"]},
+              "Action": ["sts:AssumeRole"]
+          }]
+        },
+        "Path": "/",
+        "Policies": [{
+          "PolicyName": "LamdaParseRole",
+          "PolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [{
+                "Effect": "Allow",
+                "Action": ["logs:CreateLogGroup","logs:CreateLogStream","logs:PutLogEvents"],
+                "Resource": "arn:aws:logs:*:*:*"
+            },
+            {
+	            "Effect": "Allow",
+	            "Action": [
+	                "ec2:DescribeInstances",
+	                "ec2:CreateSnapshot",
+	                "ec2:TerminateInstances",
+	                "ec2:DescribeVolumes"
+	            ],
+	            "Resource": "*"
+	        }]
+	       }
+	     }]
+      }
+    },
+    "TransformFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+            "S3Bucket": { "Ref": "S3Bucket" },
+            "S3Key": { "Ref": "S3ZipFile" }
+        },
+        "Handler": { "Fn::Join" : [ "", [{ "Ref": "ModuleName" },".handler"] ] },
+        "Role": { "Fn::GetAtt" : ["LambdaParseExecutionRole", "Arn"] },        
+        "Runtime": "nodejs",
+        "Timeout": "30"
+      }
+    }
+  },
+  "Outputs" : {
+     "LambdaFunction" : {
+      "Description": "Lambda Function Name",
+      "Value" : { "Ref": "TransformFunction" }
+      }
+   }
+}

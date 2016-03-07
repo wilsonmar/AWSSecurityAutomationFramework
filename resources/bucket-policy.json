@@ -1,0 +1,45 @@
+{
+   "AWSTemplateFormatVersion": "2010-09-09",
+   "Parameters": {
+    "BucketName" : {
+      "Description" : "The name of the bucket",
+      "Type" : "String"
+    },
+    "FirehoseRole" : {
+      "Description" : "Firehose Role",
+      "Type" : "String"
+    }
+  },
+   "Resources": {
+   		"S3BucketPolicy" : {
+		  "Type" : "AWS::S3::BucketPolicy",
+		  "Properties" : {
+		    "Bucket" : {"Ref" : "BucketName"},
+		    "PolicyDocument": {
+				"Statement": [
+					{
+						"Sid": "",
+						"Effect": "Allow",
+						"Principal": {
+							"AWS": "arn:aws:iam::902366379725:user/logs"
+						},
+						"Action": "s3:PutObject",
+						"Resource": {"Fn::Join":["",["arn:aws:s3:::",{"Ref":"BucketName"},"/*"]]}
+					},
+										{
+						"Sid": "",
+						"Effect": "Allow",
+						"Principal": {
+							"AWS": "arn:aws:iam::902366379725:user/logs"
+						},
+						"Action": "s3:GetBucketAcl",
+						"Resource": {"Fn::Join" : ["", ["arn:aws:s3:::",{"Ref":"BucketName"}]]}
+					}
+				]
+		    }
+		  }
+		}
+	}
+	
+	
+}

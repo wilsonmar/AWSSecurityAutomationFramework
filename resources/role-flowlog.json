@@ -1,0 +1,55 @@
+{
+   "AWSTemplateFormatVersion": "2010-09-09",
+   "Resources": {
+     "FlowLogRole": {
+       "Type": "AWS::IAM::Role",
+       "Properties": {
+         "AssumeRolePolicyDocument": {
+           "Version": "2012-10-17",
+           "Statement": [
+             {
+               "Sid": "",
+               "Effect": "Allow",
+               "Principal": {
+                 "Service": "vpc-flow-logs.amazonaws.com"
+               },
+               "Action": "sts:AssumeRole"
+             }
+           ]
+         },
+         "Path": "/"
+       }
+     },
+     "RolePolicies":{
+           "Type": "AWS::IAM::Policy",
+           "Properties" : {
+             "PolicyName": "FlowLogRolePolicies",
+             "PolicyDocument": {
+               "Version": "2012-10-17",
+               "Statement" : [
+                 {
+                   "Action": [
+                     "logs:CreateLogGroup",
+                     "logs:CreateLogStream",
+                     "logs:PutLogEvents",
+                     "logs:DescribeLogGroups",
+                     "logs:DescribeLogStreams"
+                   ],
+                   "Effect": "Allow",
+                   "Resource": "*"
+                 }]
+             },
+             "Roles": [ {
+               "Ref": "FlowLogRole"
+            } ]
+         }
+     }
+
+   },
+   "Outputs" : {
+     "FlowLogRole" : {
+      "Description": "Flow Log Role",
+      "Value" : { "Ref": "FlowLogRole" }
+      }
+    }
+}
