@@ -16,7 +16,15 @@
 	      "Description": "CIDR block for HoneyNet Subnet2",
 	      "Type" : "String",
 	      "Default" : "10.20.0.16/28" 
-	    }
+        },
+       "FlowLogRoleArn" : {
+           "Description": "Arn of flowlog role",
+           "Type" : "String"
+       },
+       "FlowLogGroupName" : {
+           "Description": "Flow log name",
+           "Type" : "String"
+       }
     },
  
    "Resources" : {
@@ -179,7 +187,18 @@
 		      "RouteTableId" : {"Ref":"HoneyRouteTable"},
 		      "SubnetId" : {"Ref":"HoneySubnet2"}
 		   }
-	   }    
+	   },
+       
+       "FlowLog" : {
+           "Type" : "AWS::EC2::FlowLog",
+           "Properties" : {
+               "DeliverLogsPermissionArn" : {"Ref":"FlowLogRoleArn"},
+               "LogGroupName" : { "Ref" : "FlowLogName" },
+               "ResourceId" : { "Ref" : "HoneyVpc" },
+               "ResourceType" : "VPC",
+               "TrafficType" : "ALL"
+           }
+       }
    },
  
   "Outputs" : {
@@ -196,8 +215,13 @@
       "Value" : { "Ref": "HoneySubnet1" }
     },
     "HoneySubnet2" : {
-      "Description": "Honey Subnet2",
-      "Value" : { "Ref": "HoneySubnet2" }
+        "Description": "Honey Subnet2",
+        "Value" : { "Ref": "HoneySubnet2" }
+    },
+    "FlowLogGroupId" : {
+        "Description": "Flow Log Group ID",
+        "Value" : { "Ref": "FlowLog" }
     }
+    
   }
 } 

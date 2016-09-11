@@ -1,0 +1,16 @@
+{
+    "Stacks": [
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:694817512225:stack/FlowLogRole/3081f3c0-77f3-11e6-95c3-50ba1c0590a6", 
+            "Tags": [], 
+            "CreationTime": "2016-09-11T07:41:45.602Z", 
+            "Capabilities": [
+                "CAPABILITY_NAMED_IAM"
+            ], 
+            "StackName": "FlowLogRole", 
+            "NotificationARNs": [], 
+            "StackStatus": "CREATE_IN_PROGRESS", 
+            "DisableRollback": false
+        }
+    ]
+}

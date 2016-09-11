@@ -51,6 +51,10 @@
      "FlowLogRole" : {
       "Description": "Flow Log Role",
       "Value" : { "Ref": "FlowLogRole" }
-      }
+      },
+       "FlowLogRoleArn" : {
+           "Description": "Flow Log Role",
+           "Value" : {"Fn::GetAtt" : [ "FlowLogRole", "Arn" ]}
+       }
     }
 }

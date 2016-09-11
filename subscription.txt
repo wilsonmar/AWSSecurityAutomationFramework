@@ -1,0 +1,2 @@
+
+An error occurred (ResourceNotFoundException) when calling the DeleteSubscriptionFilter operation: The specified log group does not exist.

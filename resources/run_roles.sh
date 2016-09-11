@@ -2,7 +2,7 @@
 echo "--ROLES--"
 capabilities="--capabilities CAPABILITY_NAMED_IAM"
 
-stack="FlowLogRole"
+stack=$flowlogrolestack
 template="file://resources/role-flowlog.json"
 parameters=
 . ./resources/run_template.sh $mode $stack $template $capabilities

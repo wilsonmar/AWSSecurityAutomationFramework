@@ -23,16 +23,13 @@ date
 
 #resources are named with account to keep names
 #unique across anyone who runs these scripts
-<<<<<<< HEAD
-accountid=694817512225
-=======
-accountid=##Change Me To Something Unique##
->>>>>>> 02f1e527a6f2a5b9fa0e102f2f105357af994900
+accountid=123456789999
 honeypotname=autosec
 uniqueresourceid=$honeypotname$accountid
 
 #name of stack which can be seen after running scripts
 #in the AWS console "CloudFormation" service page
+flowlogrolestack="FlowLogRole"
 networkstack="TestNetwork"
 
 ############################################
