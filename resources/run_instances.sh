@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "--INSTANCES--"
+capabilities="--capabilities CAPABILITY_NAMED_IAM"
 
 if [ "$mode" == "CREATE" ]
 then
@@ -33,4 +34,4 @@ fi
 stack="Instances"
 template="file://resources/instances.json"
 parameters="--parameters ParameterKey=S3Bucket,ParameterValue=$bucket ParameterKey=S3ZipFile,ParameterValue=amilookup.zip ParameterKey=SecurityGroup,ParameterValue=$sg1 ParameterKey=Subnet1,ParameterValue=$subnet1 ParameterKey=Subnet2,ParameterValue=$subnet2 ParameterKey=KeyName,ParameterValue=$keyname ParameterKey=PingMe,ParameterValue=$pingtest" 
-. ./resources/run_template.sh $mode $stack $template $parameters
+. ./resources/run_template.sh $mode $stack $template $parameters $capabilities

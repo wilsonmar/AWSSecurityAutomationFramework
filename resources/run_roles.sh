@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "--ROLES--"
-capabilities="--capabilities CAPABILITY_IAM"
+capabilities="--capabilities CAPABILITY_NAMED_IAM"
 
 stack="FlowLogRole"
 template="file://resources/role-flowlog.json"

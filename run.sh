@@ -23,7 +23,7 @@ date
 
 #resources are named with account to keep names
 #unique across anyone who runs these scripts
-accountid=###CHANGE ME###
+accountid=694817512225
 honeypotname=autosec
 uniqueresourceid=$honeypotname$accountid
 
@@ -39,6 +39,8 @@ networkstack="TestNetwork"
 region=$(aws configure get region)
 echo "* Your CLI is configured to create resources in this region: " $region
 echo "* http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html"
+
+uniqueresourceid=$uniqueresourceid$region
 
 #mode is the only parameter required on the command line
 #./run.sh with no parameter will explain.

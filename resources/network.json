@@ -33,7 +33,7 @@
          "Properties" : {
             "VpcId" : { "Ref" : "HoneyVpc" },
             "CidrBlock" : {"Ref" : "HoneySubnet1Cidr"},
-            "AvailabilityZone" : "us-west-2c",
+            "AvailabilityZone" : {"Fn::Select" : ["1", {"Fn::GetAZs" : "" }]},
             "Tags" : [ { "Key" : "Name", "Value" : "HoneySubnet1" } ]
          }
       },
@@ -43,7 +43,7 @@
          "Properties" : {
             "VpcId" : { "Ref" : "HoneyVpc" },
             "CidrBlock" : {"Ref" : "HoneySubnet2Cidr"},
-            "AvailabilityZone" : "us-west-2c",
+            "AvailabilityZone" : {"Fn::Select" : ["1", {"Fn::GetAZs" : "" }]},
             "Tags" : [ { "Key" : "Name", "Value" : "HoneySubnet2" } ]
          }
       },

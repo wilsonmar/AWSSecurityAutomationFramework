@@ -4,6 +4,7 @@
      "FlowLogRole": {
        "Type": "AWS::IAM::Role",
        "Properties": {
+         "RoleName": {"Fn::Join": ["-", ["FlowLogRole", {"Ref": "AWS::Region"}]]},
          "AssumeRolePolicyDocument": {
            "Version": "2012-10-17",
            "Statement": [

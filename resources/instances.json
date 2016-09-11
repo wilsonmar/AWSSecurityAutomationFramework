@@ -108,6 +108,7 @@
   	"AllowNothingRole": {
          "Type": "AWS::IAM::Role",
          "Properties": {
+             "RoleName": {"Fn::Join": ["-", ["AllowNothingRole", {"Ref": "AWS::Region"}]]},
           	"AssumeRolePolicyDocument": {
                "Version" : "2012-10-17",
                "Statement": [ {
@@ -236,6 +237,7 @@
     "LambdaExecutionRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
+        "RoleName": {"Fn::Join": ["-", ["LambdaExecutionRole", {"Ref": "AWS::Region"}]]},
         "AssumeRolePolicyDocument": {
           "Version": "2012-10-17",
           "Statement": [{
