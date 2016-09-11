@@ -193,7 +193,7 @@
            "Type" : "AWS::EC2::FlowLog",
            "Properties" : {
                "DeliverLogsPermissionArn" : {"Ref":"FlowLogRoleArn"},
-               "LogGroupName" : { "Ref" : "FlowLogName" },
+               "LogGroupName" : { "Ref" : "FlowLogGroupName" },
                "ResourceId" : { "Ref" : "HoneyVpc" },
                "ResourceType" : "VPC",
                "TrafficType" : "ALL"
