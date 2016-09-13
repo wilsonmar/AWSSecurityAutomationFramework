@@ -27,7 +27,7 @@
 
 * Clone this repo: https://git-scm.com/docs/git-clone
 
-git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
+* git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
 
 * Change the accountid value in run.sh to your AWS account id. This is used to generate unique resource names and some ARNs (Amazon's unique resource identifier) for some resources that require it.
 
