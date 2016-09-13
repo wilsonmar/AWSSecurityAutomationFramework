@@ -7,8 +7,6 @@
 
 . ./resources/run_subscription_lambda.sh
 
-. ./resources/run_flow_logs.sh
-
 . ./resources/run_bucket.sh
 
 . ./resources/run_network.sh

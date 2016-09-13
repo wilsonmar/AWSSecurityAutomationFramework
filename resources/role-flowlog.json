@@ -24,7 +24,7 @@
      "RolePolicies":{
            "Type": "AWS::IAM::Policy",
            "Properties" : {
-             "PolicyName": "FlowLogRolePolicies",
+             "PolicyName" : "FlowLogRolePolicies",
              "PolicyDocument": {
                "Version": "2012-10-17",
                "Statement" : [

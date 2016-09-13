@@ -23,7 +23,11 @@
 
 * You may or may not want to generate an AWS SSH Key (not required): http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
-* Clone the code the code (This is a Git repo): https://confluence.atlassian.com/bitbucket/clone-a-repository-223217891.html
+* Install git https://git-scm.com/
+
+* Clone this repo: https://git-scm.com/docs/git-clone
+
+git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
 
 * Change the accountid value in run.sh to your AWS account id. This is used to generate unique resource names and some ARNs (Amazon's unique resource identifier) for some resources that require it.
 

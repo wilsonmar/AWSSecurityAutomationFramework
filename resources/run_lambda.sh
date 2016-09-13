@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "--LAMBDA TRANSFORM--"
-	
+
 if [ "$mode" == "CREATE" ]
 then
 
@@ -20,7 +20,7 @@ then
 
 	echo "waiting for lambda function to add permissions"
 	functionname="$(./resources/get_output_value.sh LambdaTransform LambdaFunction)"
-	
+
 	aws lambda add-permission \
 	    --function-name $functionname \
 	    --statement-id "lambdatransform" \

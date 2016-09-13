@@ -222,6 +222,5 @@
         "Description": "Flow Log Group ID",
         "Value" : { "Ref": "FlowLog" }
     }
-    
   }
 } 

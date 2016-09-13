@@ -23,7 +23,7 @@ date
 
 #resources are named with account to keep names
 #unique across anyone who runs these scripts
-accountid=123456789999
+accountid=694817512225
 honeypotname=autosec
 uniqueresourceid=$honeypotname$accountid
 
