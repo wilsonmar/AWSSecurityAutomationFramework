@@ -19,19 +19,19 @@
 
 * Create an AWS account: https://aws.amazon.com/getting-started/
 
-* Set up an account and the AWS CLI: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+* Set up an account and obtain your access key id and secret access key: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
-* You may or may not want to generate an AWS SSH Key (not required): http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+* You may or may not want to generate an AWS SSH Key (not required) to log into your instances: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
 * Install git https://git-scm.com/
 
 * Clone this repo: https://git-scm.com/docs/git-clone
 
-* git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
+	git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
 
 * Change the accountid value in run.sh to your AWS account id. This is used to generate unique resource names and some ARNs (Amazon's unique resource identifier) for some resources that require it.
 
-* To run the stack execute this code once. Follow the last line of instructions. Run it again.
+* To run the stack execute this code once. Then follow the instructions (wait and run again after logs appear)
 
 	./run.sh CREATE [optional AWS SSH key name, without .pem at the end]
 
@@ -43,7 +43,10 @@
 
 	./run.sh PINGTEST
 
-* The scripts are re-runnable. If something fails to create due to dependency issue you can run it again
+* The scripts are re-runnable. If something fails to create due to dependency issue you can typically just run it again.
+
+* The reason you have to run it twice is because I didn't want to sit waiting for the logs to show up. It can take some time. 
+
 
 ### Known Issues ###
 
