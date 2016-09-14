@@ -19,7 +19,7 @@ a
 
 * Create an AWS account: https://aws.amazon.com/getting-started/
  
-* Install and configure the AWS CLI with your access key ID, secret key ID and region: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+* Install and configure the AWS CLI with your access key ID, secret key and region: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
 * You may or may not want to generate an AWS SSH Key (not required) to log into your instances: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
