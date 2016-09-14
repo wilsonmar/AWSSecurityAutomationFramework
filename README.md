@@ -3,9 +3,9 @@
 
 ### What is this repository for? ###
  
-* dTest environment for SANS Paper on automated intrusion detection & response
+* Test environment for SANS Paper on automated intrusion detection & response
 
-*n This code installs a honeypot and some instances in a VPC with Flow Logs enabled.
+* This code installs a honeypot and some instances in a VPC with Flow Logs enabled.
 
 * An AWS Lambda function automatically makes a snapshot and terminates instances that match  undesirable traffic patterns. 
 
