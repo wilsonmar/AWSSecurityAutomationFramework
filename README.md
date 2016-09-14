@@ -14,7 +14,7 @@
 * Use at your own risk.
 
 * The Honey VPC Network is wide open to the Internet but blocks traffic within the VPC. Do not deploy this and open rules in that network that expose your other networks within your account.
-a
+
 ### How do I get set up? ###
 
 * Create an AWS account: https://aws.amazon.com/getting-started/
