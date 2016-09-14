@@ -2,10 +2,10 @@
 
 
 ### What is this repository for? ###
+ 
+* dTest environment for SANS Paper on automated intrusion detection & response
 
-* Test environment for SANS Paper on automated intrusion detection & response
-
-* This code installs a honeypot and some instances in a VPC with Flow Logs enabled.
+*n This code installs a honeypot and some instances in a VPC with Flow Logs enabled.
 
 * An AWS Lambda function automatically makes a snapshot and terminates instances that match  undesirable traffic patterns. 
 
@@ -14,12 +14,12 @@
 * Use at your own risk.
 
 * The Honey VPC Network is wide open to the Internet but blocks traffic within the VPC. Do not deploy this and open rules in that network that expose your other networks within your account.
-
+a
 ### How do I get set up? ###
 
 * Create an AWS account: https://aws.amazon.com/getting-started/
-
-* Set up an account and obtain your access key id and secret access key: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+ 
+* Install and configure the AWS CLI with your access key ID, secret key ID and region: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
 * You may or may not want to generate an AWS SSH Key (not required) to log into your instances: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
