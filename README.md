@@ -1,6 +1,6 @@
 # README #
 
-# Firewalls, Cybersecurity, and Automation in the Cloud
+## Updated code ##
 
 For an updated automation code, training and cybersecurity in the cloud please check out 2nd Sight Lab's Cloud Security Architecture and Engineering class. We build labs that help students understand cloud security, automation, and give you code you can take back and use!
 
@@ -98,25 +98,3 @@ http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-re
 AWS IP ranges - JSON
 https://ip-ranges.amazonaws.com/ip-ranges.json
 
-Top 10 known bad IP addresses from Alert Logic in email from Nikhil Lulla, Weekly Threat Update, February 22
-
-115.28.143.60,
-106.187.96.51,
-123.59.53.219,
-46.101.249.156,
-200.143.189.254,
-223.105.1.35,
-183.3.202.103,
-185.12.7.111,
-223.105.0.130,
-103.21.70.138,
-81.183.56.217,
-46.109.168.179,
-188.118.2.26,
-195.191.158.226,
-66.168.36.140,
-117.41.229.196,
-101.200.79.204,
-40.84.225.81,
-118.170.130.207,
-188.212.103.169
