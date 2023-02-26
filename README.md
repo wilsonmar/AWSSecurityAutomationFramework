@@ -23,35 +23,42 @@ https://2ndsightlab.com/cloud-security-training.html
 
 ### How do I get set up? ###
 
-* Create an AWS account: https://aws.amazon.com/getting-started/
+1.  Create an AWS account: https://aws.amazon.com/getting-started/
  
-* Install and configure the AWS CLI with your access key ID, secret key and region: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+2.  Install and configure the AWS CLI with your access key ID, secret key and region:      
 
-* You may or may not want to generate an AWS SSH Key (not required) to log into your instances: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+    http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
-* Install git https://git-scm.com/
+3.  You may or may not want to generate an AWS SSH Key (not required) to log into your instances: 
 
-* Clone this repo: https://git-scm.com/docs/git-clone
+    http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
-	git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
+4.  Install git https://git-scm.com/
 
-* Change the accountid value in run.sh to your AWS account id. This is used to generate unique resource names and some ARNs (Amazon's unique resource identifier) for some resources that require it.
+5.  Clone this repo: https://git-scm.com/docs/git-clone
 
-* To run the stack execute this code once. Then follow the instructions (wait and run again after logs appear)
+    ```bash
+    git clone https://github.com/tradichel/AWSSecurityAutomationFramework.git 
+    ```
+6.  Change the accountid value in run.sh to your AWS account id. This is used to generate unique resource names and some ARNs (Amazon's unique resource identifier) for some resources that require it.
 
-	./run.sh CREATE [optional AWS SSH key name, without .pem at the end]
+7.  To run the stack execute this code once. Then follow the instructions (wait and run again after logs appear)
 
-* To delete the stack execute:
+    ```bash
+    ./run.sh CREATE [optional AWS SSH key name, without .pem at the end]
+    ```
+8.  To delete the stack execute:
 
-	./run.sh DELETE
-	
-* To run a ping test that generates a REJECT and terminates instance execute:
+    ```bash
+    ./run.sh DELETE
+    ```	
+9.  To run a ping test that generates a REJECT and terminates instance execute:
+    ```bash
+    ./run.sh PINGTEST
+    ```
+10. The scripts are re-runnable. If something fails to create due to dependency issue you can typically just run it again.
 
-	./run.sh PINGTEST
-
-* The scripts are re-runnable. If something fails to create due to dependency issue you can typically just run it again.
-
-* The reason you have to run it twice is because I didn't want to sit waiting for the logs to show up. It can take some time. 
+11. The reason you have to run it twice is because I didn't want to sit waiting for the logs to show up. It can take some time. 
 
 
 ### Known Issues ###
